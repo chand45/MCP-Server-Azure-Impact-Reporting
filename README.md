@@ -79,6 +79,38 @@ For example:
 }
 ```
 
+
+### Understanding the `uv` Command
+
+The `uv` command in the configuration uses `pyproject.toml` to manage dependencies:
+
+- **Virtual Environment**: `uv` creates and manages its own internal virtual environment separate from any `.venv` you may have created
+- **Dependency Management**: Dependencies are automatically installed based on `pyproject.toml` specifications
+- **Isolation**: The `uv` cache system ensures no interference with your local Python environment
+
+### Alternative: Direct Python Execution
+
+If you prefer not to use `uv`, you can run the MCP server directly:
+
+1. Create and activate a virtual environment:
+    ```bash
+    python -m venv .venv
+    # On Windows
+    .venv\Scripts\activate
+    # On macOS/Linux
+    source .venv/bin/activate
+    ```
+
+2. Install dependencies:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+3. Run the server directly:
+    ```bash
+    python impact-reporter.py
+    ```
+
 ### 5. Running the MCP Server
 If you're using Claude with Desktop or another MCP-enabled client, the server will start automatically when needed.
 
